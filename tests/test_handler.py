@@ -10,7 +10,6 @@ class TestHandlerCase(unittest.TestCase):
         result = lambda_function.lambda_handler(event, None)
         print(result)
         self.assertEqual(result['statusCode'], 200)
-        self.assertEqual(result['headers']['Content-Type'], 'application/json')
         self.assertIn('Hello World!', result['body'])
 
 
