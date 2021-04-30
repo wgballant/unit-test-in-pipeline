@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     except ClientError:
         pass
 
-    str_value += f'\r\n{dt}'
+    str_value = f'{str_value}\r\n{dt}'
 
     client.put_object(Body=str_value, Bucket='helmutcranium', Key='invocations.csv')
 
