@@ -23,10 +23,10 @@ def lambda_handler(event, context):
     print(str_value)
     client.put_object(Body=str_value, Bucket='helmutcranium', Key='invocations.csv')
 
-    qs_client = boto3.client('quicksight')
-    response = qs_client.create_ingestion(DataSetId='cfea8841-af45-4c1e-8bef-2b1e0ba4ee9b',IngestionId='automatedIngestion',AwsAccountId='685263748376')
-    print(response)
-    
+    # qs_client = boto3.client('quicksight')
+    # response = qs_client.create_ingestion(DataSetId='cfea8841-af45-4c1e-8bef-2b1e0ba4ee9b',IngestionId='automatedIngestion',AwsAccountId='685263748376')
+    # print(response)
+
     return {
         'statusCode': 200,
         'body': json.dumps('Hello World!')
